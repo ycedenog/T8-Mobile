@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title>Welcome</ion-title>
+    <p class="subTitle">Sign Up to create your account</p>
+  </div>
+
+  <form [formGroup]="regForm" novalidate>
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input formControlName="fullname" placeholder="Fullname" class="input"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+      <div *ngIf="regForm.get('fullname').touched && regForm.get('fullname').invalid">
+        <ion-text *ngIf="regForm.get('fullname').hasError('required')">
+          Fullname is required
+        </ion-text>
+      </div>
+
+      <ion-item>
+        <ion-input formControlName="email" placeholder="Email" class="input"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+      <div *ngIf="regForm.get('email').touched && regForm.get('email').invalid">
+        <ion-text *ngIf="regForm.get('email').hasError('required')">
+          Email is required
+        </ion-text>
+        <ion-text *ngIf="regForm.get('email').hasError('email')">
+          Email should be valid
+        </ion-text>
+      </div>
+
+      <ion-item>
+        <ion-input formControlName="password" type="password" placeholder="Password" class="input"></ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+      <div *ngIf="regForm.get('password').touched && regForm.get('password').invalid">
+        <ion-text *ngIf="regForm.get('password').hasError('required')">
+          Password is required
+        </ion-text>
+        <ion-text *ngIf="regForm.get('password').hasError('pattern')">
+          Password must have at least:
+          - One Character
+          - One Capital Letter
+          - One Number
+          - 8 characters
+        </ion-text>
+      </div>
+
+      <div class="signinLink">
+        <p> Already a member?<a style="color: #FFC33F" [routerLink]="['/login']">Sign in now</a> </p>
+      </div>
+    </div>
+
+    <ion-fab vertical="bottom" horizontal="end" style="margin-bottom:30px">
+      <ion-fab-button (click)="signUp()">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+</ion-content>

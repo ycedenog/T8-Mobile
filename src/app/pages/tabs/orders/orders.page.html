@@ -1,0 +1,53 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar>
+    <ion-title color="primary" mode="ios">Ordenes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-searchbar color="light" animated="true" [(ngModel)]="searchTerm" (ionChange)="filterOrders()"></ion-searchbar>
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let order of filteredOrders" lines="none">
+      <ion-card>
+        <ion-card-header>
+          <div class="header">
+            <p>ORDER ID:</p>
+            <p id="ID">#{{ order.id }}</p> 
+          </div>
+        </ion-card-header>
+
+        <ion-card-content>
+          <div id="Direction">
+            <ion-icon name="map" color="primary" size="large"></ion-icon>
+            <div id="detail-dir">
+              <p id="dir-title">PICK-UP ORDER</p>
+              <p id="dir">{{ order.delivery_address }}</p>
+            </div>
+          </div>
+          <div class="icons-price-time">
+            <div class="price">
+              <ion-icon name="cash" size="large" color="primary"></ion-icon>
+              <p>${{ order.total }}</p>
+            </div>
+            <div class="time">
+              <ion-icon name="time" size="large" color="primary"></ion-icon>
+              <p>{{ order.time | date: 'h:mm a' }}</p>
+            </div>
+          </div>
+    
+          <div class="comment">
+            <p id="comment">COMENTARIO:</p>
+            <p id="corpus">Llame cuando este cerca.</p>
+          </div>
+          
+          <div class="buttons-pick-details"> 
+            <ion-button (click)="viewOrderDetails(order.id)">detalles</ion-button>
+          </div>
+        </ion-card-content>
+
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

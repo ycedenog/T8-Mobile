@@ -1,0 +1,58 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/orders"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary" mode="ios">Detalles de la Orden</ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+  <ion-content>
+    <ion-card>
+      <ion-card-header>
+        CONTENIDO
+      </ion-card-header>
+      <ion-card-content>
+        <div class="table-header">
+          <div class="table-cell">Nombre</div>
+          <div class="table-cell">Cantidad</div>
+          <div class="table-cell">Monto</div>
+        </div>
+        <div class="table-row" *ngFor="let item of order.order_products" style="margin-bottom: 10px;">
+          <div class="table-cell">
+            <ion-item (click)="item.expanded = !item.expanded" lines="none" style="font-weight: bold;">
+              {{ item.product.name }}
+              <ion-icon name="add-circle" *ngIf="!item.expanded" slot="end"></ion-icon>
+              <ion-icon name="remove-circle" *ngIf="item.expanded" slot="end"></ion-icon>
+            </ion-item>
+          </div>
+          <div class="table-cell">1</div>
+          <div class="table-cell">${{ item.product.price }}</div>
+        </div>
+        <div class="total-row">
+          <div class="table-cell" colspan="2" style="font-size: large;">Total:</div>
+          <div class="table-cell" id="Total">${{ getTotalAmount() }}</div>
+        </div>
+        <div class="characteristics">
+          <div class="characteristics-header">ADICIONAL:</div>
+          <ion-list lines="none">
+            <ion-item *ngFor="let item of order.order_products">
+              <ion-label>
+                <ion-item *ngIf="item.expanded">
+                  <ion-list class="characteristics-list" lines="none">
+                    <ion-item class="characteristics-item" *ngFor="let characteristic of item.product.characteristics">
+                      {{ characteristic.value }}
+                    </ion-item>
+                  </ion-list>
+                </ion-item>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+  
+  
+
+

@@ -1,0 +1,126 @@
+ion-header {
+  ion-toolbar {
+      --background: var(--ion-color-secondary);
+      ion-segment {
+          --background: var(--ion-color-primary);
+          ion-segment-button {
+              --color: var(--ion-color-white);
+              --color-checked: var(--ion-color-primary);
+          }
+      }
+  }
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #b4b8b5;
+  font-weight: bold;
+
+}
+
+ion-card{
+  width: 100%;
+  border-radius: 19px;
+  #ID{
+    color: rgb(106, 112, 112);
+    font-weight: bold;
+    font-size: medium;
+  }
+}
+
+ion-icon{
+  background-color: #e6f1ea;
+  border-radius: 5px;
+}
+
+ion-card-content{
+  margin-top: -20px;
+  #Direction {
+    display: flex;
+    font-weight: bold;
+    margin-bottom: 15px;
+    align-items: center;
+
+    #detail-dir{
+      margin-left: 20px;
+      
+      
+      #dir{
+        font-size: medium;
+        font-weight: 700;
+        color: rgb(106, 112, 112);
+      }
+      #dir-title{
+        font-size:smaller;
+        color: #b4b8b5;
+      }
+    }
+  }
+
+  .icons-price-time{
+    display: flex;
+    margin-bottom: 15px;
+
+    .price{
+      display:flex;
+      align-items: center;
+      margin-right: 30px;
+
+      ion-icon{
+        margin-right: 20px;
+      }
+
+      p{
+        font-weight: 550;
+        font-size: medium;
+        color: rgb(106, 112, 112);
+      }
+    }
+    .time{
+      display:flex;
+      align-items: center;
+
+      ion-icon{
+        margin-right: 20px;
+      }
+
+      p{
+        font-weight: 550;
+        font-size: medium;
+        color: rgb(106, 112, 112);
+      }
+    }
+  }
+
+  .comment{
+    margin-bottom: 10px;
+    #comment{
+      font-size: smaller;
+      color: #b4b8b5;
+    }
+
+    #corpus {
+      font-weight: bold;
+    }
+  }
+
+  .buttons-pick-details{
+    display:flex;
+    justify-content: center;
+
+  }
+
+  ion-button{
+    --background: #FFC33F;
+  
+    --color: #ffffff;
+    --font-weight: bold;
+    --border-radius: 10px;
+    }
+}
+
+     
+  

@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar>
+    <ion-title color="primary" mode="ios">Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+
+  <div align="center">
+    <ion-avatar>
+      <img src="assets/imgs/img.png" />
+    </ion-avatar>
+    <ion-label color="primary">Yonkani Cedeno</ion-label>
+  </div>
+
+  <ion-list>
+    <ion-item lines="full">
+      <ion-icon slot="start" name="notifications-outline"></ion-icon>
+      <ion-label>
+        Notificaciones Push
+      </ion-label>
+      <ion-toggle slot="end" [checked]="true"></ion-toggle>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-icon slot="start" name="finger-print-outline"></ion-icon>
+      <ion-label>
+        Bloqueo por Touch ID
+      </ion-label>
+      <ion-toggle slot="end" [checked]="true"></ion-toggle>
+    </ion-item>
+    <ion-item lines="full" detail>
+      <ion-icon slot="start" name="key-outline"></ion-icon>
+      <ion-label>
+        Cambiar Contraseña
+      </ion-label>
+    </ion-item>
+    <ion-item lines="full" detail>
+      <ion-icon slot="start" name="help-buoy-outline"></ion-icon>
+      <ion-label>
+        Obtener Asistencia
+      </ion-label>
+    </ion-item>
+    
+  </ion-list>
+
+  <ion-button fill="clear" class="ion-margin" color="danger" (click)="logout()">
+    <ion-icon name="log-out" slot="start"></ion-icon> Logout
+  </ion-button>
+
+</ion-content>

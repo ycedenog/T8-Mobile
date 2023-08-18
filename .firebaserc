@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mobile-paos": {
+      "hosting": {
+        "app": [
+          "mobile-paos"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mobile-paos"
+  }
+}
